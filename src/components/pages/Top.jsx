@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { SecondaryButton } from "../atoms/button/SecondaryButton";
 import { useHistory } from "react-router-dom";
+import { UserContext } from "../../providers/UserProvider";
 
 export const Top = () => {
+  const { setUserInfo } = useContext(UserContext);
   const onClickAdmin = () => {
-    history.push({ pathname: "/users", state: { isAdmin: true } });
+    setUserInfo({ isAdmin: true });
+    history.push("/users");
   };
   const onClickGeneral = () => {
-    history.push({ pathname: "/users", state: { isAdmin: false } });
+    setUserInfo({ isAdmin: false });
+    history.push("/users");
   };
   const history = useHistory();
   return (
