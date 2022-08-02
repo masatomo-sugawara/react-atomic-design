@@ -25,6 +25,7 @@ export const Users = () => {
   const onClickSwitch = () => {
     setUserInfo({ isAdmin: !userInfo.isAdmin });
   };
+
   return (
     <SContainer>
       <h2>ユーザー一覧</h2>
